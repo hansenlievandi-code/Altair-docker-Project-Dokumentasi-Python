@@ -1,5 +1,5 @@
 import { Link, useOutletContext } from "react-router-dom";
-import CodeBlock from "../../../fitur/copycode";
+import CodeBlock from "../../../fitur/copycode.jsx";
 
 export const Operator = () => {
   const { theme } = useOutletContext();

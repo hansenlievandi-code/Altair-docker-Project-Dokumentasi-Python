@@ -17,14 +17,14 @@ RUN npm ci --omit=dev && npm cache clean --force
 # ── Stage 3: image akhir (kecil, non-root) ───────────────────────────────────
 FROM node:22-alpine AS runtime
 LABEL org.opencontainers.image.title="altair-docs" \
-      org.opencontainers.image.authors="Laurencio Luckson, Fendy, Aelberth Cheong"
+  org.opencontainers.image.authors="Laurencio Luckson, Fendy, Aelberth Cheong"
 
 # Hanya nilai non-rahasia yang boleh punya default.
 # JWT_SECRET, DEMO_EMAIL, DEMO_PASSWORD diberikan saat `run` (-e / --env-file).
 ENV NODE_ENV=production \
-    PORT=5000 \
-    APP_NAME="Altair Docs" \
-    APP_ENV=production
+  PORT=5000 \
+  APP_NAME="Altair Docs" \
+  APP_ENV=production
 
 WORKDIR /app
 COPY --from=deps  --chown=node:node /app/node_modules ./node_modules

@@ -18,4 +18,4 @@ export const sidebarItems = [
     { id: "Debugging", label: "Debugging", path: "/Debugging" },
     { id: "typeHints", label: "Type Hints", path: "/typeHints" },
     { id: "StandardLibary", label: "Standard Library", path: "/StandardLibary" },
-  ];
+];
