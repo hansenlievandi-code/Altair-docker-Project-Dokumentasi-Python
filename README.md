@@ -62,8 +62,8 @@ docker rm -f altair-docs
 ## Tag dan push ke registry
 ```bash
 docker login
-docker tag altair-docs:1.0 USERNAME/altair-docs:1.0
-docker push USERNAME/altair-docs:1.0
+docker tag altair-docs:1.0 USERNAME/altairteam:1.1
+docker push USERNAME/altairteam:1.1
 ```
 
 ## Uji dari registry
@@ -71,7 +71,7 @@ docker push USERNAME/altair-docs:1.0
 docker rm -f altair-docs
 docker rmi USERNAME/altair-docs:1.0 altair-docs:1.0
 docker images                        # pastikan image hilang
-docker pull USERNAME/altair-docs:1.0
+docker pull USERNAME/altairteam:1.1
 docker run -d --name altair-docs -p 8080:5000 \
   -e JWT_SECRET="..." -e DEMO_EMAIL="..." -e DEMO_PASSWORD="..." \
   USERNAME/altair-docs:1.0
