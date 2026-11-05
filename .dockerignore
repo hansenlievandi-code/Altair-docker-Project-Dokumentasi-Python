@@ -1,7 +1,21 @@
-.git/
-.vscode/
-node_modules/
-deno.json
-
+node_modules
+dist
+.git
 .gitignore
-.gitattributes
+.vscode
+.idea
+.DS_Store
+*.log
+npm-debug.log*
+
+# Secret & file lokal jangan sampai masuk image
+.env
+.env.*
+!.env.example
+
+# File yang tidak dibutuhkan di image
+Dockerfile
+.dockerignore
+README.md
+DEMO.md
+eslint.config.js

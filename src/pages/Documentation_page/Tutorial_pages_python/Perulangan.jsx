@@ -1,5 +1,5 @@
 import { Link, useOutletContext } from "react-router-dom"
-import CodeBlock from "../../../fitur/copycode.jsx";
+import CodeBlock from "../../../fitur/copycode";
 
 export const Perulangan = () => {
   const { theme } = useOutletContext();

@@ -1,6 +1,3 @@
-# Altair-docker-Project-Dokumentasi-Python
-Project "Website Dokumentasi Python" oleh tim Altair dari Universitas Mikroskil adalah sebuah platform pembelajaran digital yang dirancang menggunakan React Vite untuk menyajikan materi pemrograman Python secara modern, sistematis, dan interaktif. didukung oleh container project dari docker
-
 # Altair Docs (Proyek UTS Container)
 
 Platform dokumentasi Python (React + Vite) dengan backend Express untuk login.
@@ -14,9 +11,11 @@ Tim: Laurencio Luckson, Fendy, Aelberth Cheong
 | `/` | Halaman utama |
 | `/DocumentationPage` | Halaman dokumentasi (juga `/OOP`, `/Fungsi`, dst.) |
 | `/Login` | Halaman login |
+| `/SignUp` | Halaman pendaftaran + verifikasi OTP |
 | `/api/health` | Health check |
 | `/api/info` | Info aplikasi (membaca `APP_NAME`, menampilkan hostname container) |
 | `POST /api/login`, `GET /api/me` | Autentikasi JWT |
+| `POST /api/signup`, `POST /api/verify-otp`, `POST /api/resend-otp` | Pendaftaran dengan verifikasi OTP email |
 
 ## Environment variable
 | Nama | Default | Keterangan |
@@ -26,6 +25,11 @@ Tim: Laurencio Luckson, Fendy, Aelberth Cheong
 | `APP_ENV` | `production` | Label environment |
 | `JWT_SECRET` | acak saat start | **Rahasia**, kirim saat run |
 | `DEMO_EMAIL` / `DEMO_PASSWORD` | kosong | **Rahasia**, akun login demo. Kosong = login nonaktif |
+
+| `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM` | kosong | Opsional, untuk kirim OTP lewat email. Kosong = OTP dicetak di `docker logs` |
+| `OTP_TTL_MINUTES` | `5` | Masa berlaku kode OTP |
+
+Catatan: akun hasil Sign Up disimpan di memori server (tanpa database), jadi hilang saat container restart. Akun demo dari env var selalu dibuat ulang.
 
 Tidak ada secret di dalam image. Semua rahasia diberikan saat `run`.
 
