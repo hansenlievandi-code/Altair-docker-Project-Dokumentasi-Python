@@ -74,7 +74,7 @@ docker images                        # pastikan image hilang
 docker pull USERNAME/altairteam:1.1
 docker run -d --name altair-docs -p 8080:5000 \
   -e JWT_SECRET="..." -e DEMO_EMAIL="..." -e DEMO_PASSWORD="..." \
-  USERNAME/altair-docs:1.0
+  USERNAME/altairteam:1.1
 curl http://localhost:8080/api/info
 ```
 
